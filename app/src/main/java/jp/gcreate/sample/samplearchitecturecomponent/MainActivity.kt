@@ -16,12 +16,15 @@
 
 package jp.gcreate.sample.samplearchitecturecomponent
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
+    private val viewModel: MainViewModel by lazy { ViewModelProviders.of(this).get(MainViewModel::class.java) }
     private val textOne: TextView by lazy { findViewById<TextView>(R.id.text_one) }
     private val textTwo: TextView by lazy { findViewById<TextView>(R.id.text_two) }
 
@@ -30,5 +33,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         textOne.text = this.toString()
+        viewModel.viewModelInstance.observe(this, Observer { textTwo.text = it ?: "instance is null" })
     }
 }

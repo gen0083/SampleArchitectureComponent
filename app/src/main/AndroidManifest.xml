@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,11 +21,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".list.SampleListActivity"
+            android:name="jp.gcreate.sample.samplearchitecturecomponent.ui.list.SampleListActivity"
             >
         </activity>
         <activity
-            android:name=".customviewmodel.CustomActivity"
+            android:name="jp.gcreate.sample.samplearchitecturecomponent.ui.customviewmodel.CustomActivity"
             >
         </activity>
     </application>

@@ -1,4 +1,4 @@
-package jp.gcreate.sample.samplearchitecturecomponent.list
+package jp.gcreate.sample.samplearchitecturecomponent.ui.list
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView

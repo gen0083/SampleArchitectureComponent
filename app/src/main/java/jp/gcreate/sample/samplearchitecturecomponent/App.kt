@@ -1,7 +1,7 @@
 package jp.gcreate.sample.samplearchitecturecomponent
 
 import android.app.Application
-import jp.gcreate.sample.samplearchitecturecomponent.customviewmodel.CustomViewModelFactory
+import jp.gcreate.sample.samplearchitecturecomponent.ui.customviewmodel.CustomViewModelFactory
 import jp.gcreate.sample.samplearchitecturecomponent.data.repository.TestRepository
 import jp.gcreate.sample.samplearchitecturecomponent.data.repository.TestRepositoryInMemory
 import timber.log.Timber

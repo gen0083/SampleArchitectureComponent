@@ -1,4 +1,4 @@
-package jp.gcreate.sample.samplearchitecturecomponent
+package jp.gcreate.sample.samplearchitecturecomponent.ui.main
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel

@@ -1,4 +1,4 @@
-package jp.gcreate.sample.samplearchitecturecomponent.list
+package jp.gcreate.sample.samplearchitecturecomponent.ui.list
 
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil

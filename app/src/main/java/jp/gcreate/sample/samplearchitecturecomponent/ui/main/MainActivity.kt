@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jp.gcreate.sample.samplearchitecturecomponent
+package jp.gcreate.sample.samplearchitecturecomponent.ui.main
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -22,9 +22,10 @@ import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import jp.gcreate.sample.samplearchitecturecomponent.customviewmodel.CustomActivity
+import jp.gcreate.sample.samplearchitecturecomponent.R
+import jp.gcreate.sample.samplearchitecturecomponent.ui.customviewmodel.CustomActivity
 import jp.gcreate.sample.samplearchitecturecomponent.databinding.ActivityMainBinding
-import jp.gcreate.sample.samplearchitecturecomponent.list.SampleListActivity
+import jp.gcreate.sample.samplearchitecturecomponent.ui.list.SampleListActivity
 
 class MainActivity : AppCompatActivity() {
 

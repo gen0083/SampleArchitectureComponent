@@ -1,4 +1,4 @@
-package jp.gcreate.sample.samplearchitecturecomponent.list
+package jp.gcreate.sample.samplearchitecturecomponent.ui.list
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders

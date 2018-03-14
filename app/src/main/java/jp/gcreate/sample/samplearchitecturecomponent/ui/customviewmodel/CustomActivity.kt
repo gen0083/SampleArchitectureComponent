@@ -1,4 +1,4 @@
-package jp.gcreate.sample.samplearchitecturecomponent.customviewmodel
+package jp.gcreate.sample.samplearchitecturecomponent.ui.customviewmodel
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders

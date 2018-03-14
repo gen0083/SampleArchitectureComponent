@@ -1,4 +1,4 @@
-package jp.gcreate.sample.samplearchitecturecomponent.customviewmodel
+package jp.gcreate.sample.samplearchitecturecomponent.ui.customviewmodel
 
 import android.databinding.DataBindingUtil
 import android.databinding.ViewDataBinding

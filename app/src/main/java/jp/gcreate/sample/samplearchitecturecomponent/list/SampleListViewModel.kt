@@ -5,15 +5,15 @@ import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import jp.gcreate.sample.samplearchitecturecomponent.R
-import jp.gcreate.sample.samplearchitecturecomponent.data.ListItem
+import jp.gcreate.sample.samplearchitecturecomponent.data.SampleListItem
 
 /**
  * Copyright 2018 G-CREATE
  */
-class ListViewModel(application: Application): AndroidViewModel(application) {
-    private val mutableLiveData: MutableLiveData<List<ListItem>> = MutableLiveData()
-    val liveData: LiveData<List<ListItem>> = mutableLiveData
-    private val localList: MutableList<ListItem> = mutableListOf()
+class SampleListViewModel(application: Application): AndroidViewModel(application) {
+    private val mutableLiveData: MutableLiveData<List<SampleListItem>> = MutableLiveData()
+    val liveData: LiveData<List<SampleListItem>> = mutableLiveData
+    private val localList: MutableList<SampleListItem> = mutableListOf()
     private var idCounter: Int = 0
 
     fun addItem() {
@@ -32,7 +32,7 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
         mutableLiveData.value = localList.toList()
     }
 
-    private fun generateItem(): ListItem {
+    private fun generateItem(): SampleListItem {
         val id = idCounter++
         val (res, text) = when(id % 4) {
             0 -> R.drawable.ic_android to "android$id"
@@ -40,6 +40,6 @@ class ListViewModel(application: Application): AndroidViewModel(application) {
             2 -> R.drawable.ic_hand to "hand $id"
             else -> R.drawable.ic_photo to "photo $id"
         }
-        return ListItem(id, res, text)
+        return SampleListItem(id, res, text)
     }
 }

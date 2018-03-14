@@ -15,10 +15,10 @@ import jp.gcreate.sample.samplearchitecturecomponent.databinding.ActivityListBin
 /**
  * Copyright 2018 G-CREATE
  */
-class ListActivity : AppCompatActivity() {
+class SampleListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityListBinding
-    private val viewModel: ListViewModel by lazy { ViewModelProviders.of(this).get(ListViewModel::class.java) }
+    private val viewModel: SampleListViewModel by lazy { ViewModelProviders.of(this).get(SampleListViewModel::class.java) }
     private val sampleAdapter = SampleListAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +39,7 @@ class ListActivity : AppCompatActivity() {
 
     private fun setUpRecyclerView() {
         binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@ListActivity, LinearLayoutManager.VERTICAL, false)
+            layoutManager = LinearLayoutManager(this@SampleListActivity, LinearLayoutManager.VERTICAL, false)
             adapter = sampleAdapter
         }
     }

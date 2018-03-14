@@ -3,25 +3,25 @@ package jp.gcreate.sample.samplearchitecturecomponent.list
 import android.support.v7.recyclerview.extensions.ListAdapter
 import android.support.v7.util.DiffUtil
 import android.view.ViewGroup
-import jp.gcreate.sample.samplearchitecturecomponent.data.ListItem
+import jp.gcreate.sample.samplearchitecturecomponent.data.SampleListItem
 
 /**
  * Copyright 2018 G-CREATE
  */
-class SampleListAdapter : ListAdapter<ListItem, ListItemViewHolder>(
-    object: DiffUtil.ItemCallback<ListItem>() {
-        override fun areItemsTheSame(oldItem: ListItem, newItem: ListItem): Boolean
+class SampleListAdapter : ListAdapter<SampleListItem, SampleListItemViewHolder>(
+    object: DiffUtil.ItemCallback<SampleListItem>() {
+        override fun areItemsTheSame(oldItem: SampleListItem, newItem: SampleListItem): Boolean
             = oldItem.id == newItem.id
 
-        override fun areContentsTheSame(oldItem: ListItem, newItem: ListItem): Boolean
+        override fun areContentsTheSame(oldItem: SampleListItem, newItem: SampleListItem): Boolean
             = oldItem == newItem
     }
 ) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListItemViewHolder
-        = ListItemViewHolder.inflateWithParent(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SampleListItemViewHolder
+        = SampleListItemViewHolder.inflateWithParent(parent)
 
-    override fun onBindViewHolder(holder: ListItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SampleListItemViewHolder, position: Int) {
         val item = getItem(position)
         holder.bind(item)
     }

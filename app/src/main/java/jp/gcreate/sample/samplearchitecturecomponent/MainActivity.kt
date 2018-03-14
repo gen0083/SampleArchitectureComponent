@@ -23,7 +23,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import jp.gcreate.sample.samplearchitecturecomponent.databinding.ActivityMainBinding
-import jp.gcreate.sample.samplearchitecturecomponent.list.ListActivity
+import jp.gcreate.sample.samplearchitecturecomponent.list.SampleListActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +36,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.textOne.text = this.toString()
         viewModel.viewModelInstance.observe(this, Observer { binding.textTwo.text = it ?: "instance is null" })
-        binding.openList.setOnClickListener { startActivity(Intent(this, ListActivity::class.java)) }
+        binding.openList.setOnClickListener { startActivity(Intent(this, SampleListActivity::class.java)) }
     }
 }

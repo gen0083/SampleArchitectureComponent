@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".list.ListActivity"
+            android:name=".list.SampleListActivity"
             >
         </activity>
     </application>

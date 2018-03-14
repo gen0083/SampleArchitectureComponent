@@ -8,7 +8,7 @@
     <data>
         <variable
             name="item"
-            type="jp.gcreate.sample.samplearchitecturecomponent.data.ListItem"
+            type="jp.gcreate.sample.samplearchitecturecomponent.data.SampleListItem"
             />
 
     </data>

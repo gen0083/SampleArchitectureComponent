@@ -24,6 +24,10 @@
             android:name=".list.SampleListActivity"
             >
         </activity>
+        <activity
+            android:name=".customviewmodel.CustomActivity"
+            >
+        </activity>
     </application>
 
 </manifest>

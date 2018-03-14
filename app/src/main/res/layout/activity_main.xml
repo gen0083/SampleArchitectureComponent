@@ -37,5 +37,12 @@
             android:text="open list activity"
             />
 
+        <Button
+            android:id="@+id/open_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="open custom viewmodel activity"
+            />
+
     </LinearLayout>
 </layout>

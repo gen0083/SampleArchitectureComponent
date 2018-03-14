@@ -59,7 +59,7 @@ class CustomActivity : AppCompatActivity() {
         })
         binding.addButton.setOnClickListener {
             val success = viewModel.addData(binding.inputName.editableText.toString(),
-                              binding.inputName.editableText.toString())
+                              binding.inputValue.editableText.toString())
             if (success) {
                 binding.inputName.editableText.clear()
                 binding.inputValue.editableText.clear()

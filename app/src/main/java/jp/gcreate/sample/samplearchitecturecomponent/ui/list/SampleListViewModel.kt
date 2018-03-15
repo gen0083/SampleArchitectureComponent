@@ -4,8 +4,10 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
+import android.arch.lifecycle.Observer
 import jp.gcreate.sample.samplearchitecturecomponent.R
 import jp.gcreate.sample.samplearchitecturecomponent.data.SampleListItem
+import timber.log.Timber
 
 /**
  * Copyright 2018 G-CREATE
@@ -15,6 +17,14 @@ class SampleListViewModel(application: Application): AndroidViewModel(applicatio
     val liveData: LiveData<List<SampleListItem>> = mutableLiveData
     private val localList: MutableList<SampleListItem> = mutableListOf()
     private var idCounter: Int = 0
+    private val testObserver = Observer<List<SampleListItem>> {
+        Timber.d("mutable live data observe: list size=${it?.size} $it")
+    }
+
+    init {
+        mutableLiveData.observeForever(testObserver)
+        Timber.d("test observer added")
+    }
 
     fun addItem() {
         val item = generateItem()
@@ -28,7 +38,7 @@ class SampleListViewModel(application: Application): AndroidViewModel(applicatio
     }
 
     private fun notifyList() {
-        // if setValue same instance, subscriber cannot received list after modified.
+        // if setValue same instance, ListAdapter dose not dispatch to update item if it modified
         mutableLiveData.value = localList.toList()
     }
 
@@ -41,5 +51,11 @@ class SampleListViewModel(application: Application): AndroidViewModel(applicatio
             else -> R.drawable.ic_photo to "photo $id"
         }
         return SampleListItem(id, res, text)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        mutableLiveData.removeObserver(testObserver)
+        Timber.d("test observer removed")
     }
 }

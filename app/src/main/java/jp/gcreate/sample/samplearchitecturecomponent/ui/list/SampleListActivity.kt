@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.view.View
 import jp.gcreate.sample.samplearchitecturecomponent.R
 import jp.gcreate.sample.samplearchitecturecomponent.databinding.ActivityListBinding
+import timber.log.Timber
 
 /**
  * Copyright 2018 G-CREATE
@@ -28,11 +29,9 @@ class SampleListActivity : AppCompatActivity() {
         setUpRecyclerView()
 
         viewModel.liveData.observe(this, Observer {
-            it?.let {
-                sampleAdapter.submitList(it)
-                showNoContentview(it.isEmpty())
-            } ?: showNoContentview(true)
+            Timber.d("live data received on activity: $it")
             sampleAdapter.submitList(it)
+            showNoContentview(it?.isEmpty() ?: true)
         })
         binding.fab.setOnClickListener { viewModel.addItem() }
     }

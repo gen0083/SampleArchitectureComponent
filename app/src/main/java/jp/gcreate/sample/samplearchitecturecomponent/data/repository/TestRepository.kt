@@ -1,5 +1,6 @@
 package jp.gcreate.sample.samplearchitecturecomponent.data.repository
 
+import android.arch.lifecycle.LiveData
 import jp.gcreate.sample.samplearchitecturecomponent.data.TestData
 
 /**
@@ -9,4 +10,5 @@ interface TestRepository {
     fun save(data: TestData)
     fun load(name: String): TestData?
     fun loadAll(): List<TestData>
+    fun monitorAll(): LiveData<List<TestData>>
 }

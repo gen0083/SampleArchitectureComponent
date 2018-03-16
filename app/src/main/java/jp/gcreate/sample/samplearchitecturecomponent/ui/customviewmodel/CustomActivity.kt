@@ -52,7 +52,7 @@ class CustomActivity : AppCompatActivity() {
 
     private fun setUpRecyclerView() {
         binding.recyclerView.apply {
-            layoutManager = LinearLayoutManager(this@CustomActivity, LinearLayoutManager.VERTICAL, true)
+            layoutManager = LinearLayoutManager(this@CustomActivity, LinearLayoutManager.VERTICAL, false)
             adapter = listAdapter
             addItemDecoration(DividerItemDecoration(this@CustomActivity, LinearLayoutManager.VERTICAL))
         }

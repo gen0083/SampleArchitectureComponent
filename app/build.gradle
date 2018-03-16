@@ -18,9 +18,30 @@ android {
             }
         }
     }
-    buildTypes {
+    signingConfigs {
+        debug {
+            storeFile = rootProject.file("debug.key")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
         release {
+            // DON'T DO THIS IN YOUR PRODUCT, release key should not contains public repository and
+            // do not write credential information directly
+            storeFile = rootProject.file("release.key")
+            storePassword = "sample"
+            keyAlias = "sample"
+            keyPassword = "sample"
+        }
+    }
+    buildTypes {
+        debug {
             minifyEnabled false
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

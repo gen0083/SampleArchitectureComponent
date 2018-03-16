@@ -25,7 +25,7 @@ class TestRepositoryInMemory : TestRepository{
         return cache
     }
 
-    override fun monitorAll(): LiveData<List<TestData>> {
+    override fun watch(): LiveData<List<TestData>> {
         return mutableLiveData
     }
 }

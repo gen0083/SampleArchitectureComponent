@@ -53,7 +53,7 @@ class TestRepositoryByRoomTest {
             it?.let { list = it }
         }
 
-        sut.monitorAll().observeForever(observer)
+        sut.watch().observeForever(observer)
 
         sut.save(TestData(0, "test1", "test1 data"))
         sut.save(TestData(0, "test2", "test2 data"))
@@ -62,8 +62,9 @@ class TestRepositoryByRoomTest {
         assertThat(sut.load("test2"), `is`(TestData(2, "test2", "test2 data")))
 
         assertThat(list.size, `is`(2))
-        assertThat(sut.monitorAll().value, `is`(nullValue()))
+        assertThat(sut.loadAll().size, `is`(2))
+        assertThat(sut.watch().value, `is`(nullValue()))
 
-        sut.monitorAll().removeObserver(observer)
+        sut.watch().removeObserver(observer)
     }
 }

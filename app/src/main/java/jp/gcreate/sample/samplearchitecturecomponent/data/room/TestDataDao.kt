@@ -17,8 +17,11 @@ interface TestDataDao {
     fun insertTestData(testData: TestData)
 
     @Query("select * from ${RoomConstants.TEST_DATA_TABLE_NAME}")
-    fun loadAll(): LiveData<List<TestData>>
+    fun watch(): LiveData<List<TestData>>
 
     @Query("select * from ${RoomConstants.TEST_DATA_TABLE_NAME} where name = :name limit 1")
     fun load(name: String): TestData
+
+    @Query("select * from ${RoomConstants.TEST_DATA_TABLE_NAME}")
+    fun loadAll(): List<TestData>
 }

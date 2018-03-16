@@ -14,7 +14,7 @@ import timber.log.Timber
 private const val EMPTY_MESSAGE = "empty not allowed"
 
 class CustomViewModel(private val repository: TestRepository): ViewModel() {
-    val testData: LiveData<List<TestData>> = repository.monitorAll()
+    val testData: LiveData<List<TestData>> = repository.watch()
     private val dispatcherNameError: MutableLiveData<String?> = MutableLiveData()
     val nameError: LiveData<String?> = dispatcherNameError
     private val dispatcherValueError: MutableLiveData<String?> = MutableLiveData()

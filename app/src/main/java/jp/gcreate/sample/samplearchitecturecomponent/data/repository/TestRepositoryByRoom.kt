@@ -9,8 +9,8 @@ import jp.gcreate.sample.samplearchitecturecomponent.data.room.TestDataDao
  */
 class TestRepositoryByRoom(private val dao: TestDataDao): TestRepository {
 
-    override fun monitorAll(): LiveData<List<TestData>> {
-        return dao.loadAll()
+    override fun watch(): LiveData<List<TestData>> {
+        return dao.watch()
     }
 
     override fun save(data: TestData) {
@@ -22,6 +22,6 @@ class TestRepositoryByRoom(private val dao: TestDataDao): TestRepository {
     }
 
     override fun loadAll(): List<TestData> {
-        return dao.loadAll().value ?: emptyList()
+        return dao.loadAll()
     }
 }

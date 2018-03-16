@@ -10,5 +10,5 @@ interface TestRepository {
     fun save(data: TestData)
     fun load(name: String): TestData?
     fun loadAll(): List<TestData>
-    fun monitorAll(): LiveData<List<TestData>>
+    fun watch(): LiveData<List<TestData>>
 }
